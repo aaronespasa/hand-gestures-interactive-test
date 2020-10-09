@@ -1,2 +1,4 @@
-# hand-gestures-interactive-test
-Recognise hand gestures in real time to answer a test provided by a teacher in an online class
+# Answer a question of a teacher during an online class using hand gestures
+
+### Resources:
+- Database: https://www.kaggle.com/gti-upm/leapgestrecog
