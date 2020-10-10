@@ -99,7 +99,7 @@ while cap.isOpened():
             cv2.circle(crop_image, far, 4, [255, 255, 255], -1)
             angle = (math.acos((b ** 2 + c ** 2 - a ** 2) / (2 * b * c)) * 180) / math.pi
 
-            if angle <= 90:
+            if angle <= 100:
                 count_defects += 1
                 cv2.circle(crop_image, far, 4, [0, 0, 255], -1)
 
