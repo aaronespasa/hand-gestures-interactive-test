@@ -8,8 +8,8 @@ cap = cv2.VideoCapture(vid_path)
 while cap.isOpened():
     ret, frame = cap.read()
 
-    # Get hand datat from a rectangle sub window
-    pt1, pt2 = (100, 100), (300, 300)
+    # Get hand data from a rectangle sub window
+    pt1, pt2 = (50, 50), (300, 300)
     cv2.rectangle(frame, pt1, pt2, (0, 255, 0), 0)
     crop_image = frame[100:300, 100:300]
 
@@ -79,46 +79,27 @@ while cap.isOpened():
 
         # Print number of fingers
         if count_defects == 0:
-            cv2.putText(frame, "ONE", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 0, 255), 2)
+            pass
         elif count_defects == 1:
-            cv2.putText(frame, "TWO", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 0, 255), 2)
+            cv2.putText(frame, "ONE", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 0, 255), 2)
         elif count_defects == 2:
-            cv2.putText(frame, "THREE", (5, 50), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 0, 255), 2)
+            cv2.putText(frame, "TWO", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 0, 255), 2)
         elif count_defects == 3:
-            cv2.putText(frame, "FOUR", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 0, 255), 2)
-        elif count_defects == 4:
-            cv2.putText(frame, "FIVE", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 0, 255), 2)
+            cv2.putText(frame, "THREE", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 0, 255), 2)
+        elif count_defects in range(4, 6):
+            cv2.putText(frame, "OK", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 0, 255), 2)
     except:
-        drawing = np.zeros(crop_image.shape)
+        pass
 
     # Show required images
     cv2.imshow("Gesture", frame)
-    all_image = np.hstack((drawing, crop_image))
-    cv2.imshow('Contours', all_image)
+    # all_image = np.hstack((drawing, crop_image))
+    # cv2.imshow('Contours', all_image)
 
     if cv2.waitKey(1) == ord('q'):
         break
+    elif cv2.waitKey(1) == ord('p'):
+        cv2.waitKey(-1)
 
 cap.release()
 cv2.destroyAllWindows()
-
-#hull_img = edge_detect(one_finger_path, 100, 255)
-#ret, the = cv2.threshold(one_finger, 70, 255, cv2.THRESH_BINARY)
-#_, contours, _ = cv2.findContours(the.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-# hull = [cv2.convexHull(c) for c in contours]
-# final = cv2.drawContours(one_finger, hull, -1, (255, 0, 0))
-
-"""
-
-def edge_detect(file_name, tresh_min, tresh_max):
-    image = cv2.imread(file_name)
-    im_bw = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-    (thresh, im_bw) = cv2.threshold(im_bw, tresh_min, tresh_max, 0)
-
-    contours, hierarchy = cv2.findContours(im_bw, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-    hull = [cv2.convexHull(c) for c in contours]
-    hull_img = cv2.drawContours(image, hull, -1, (0, 255,0))
-
-    return hull_img
-"""
