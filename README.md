@@ -4,9 +4,9 @@ Improving the world, one Zoom call at a time.
 # Inspiration 💡
 Due to CoVid-19, Remote learning is becoming the only resource of learning for millions of students. Unfortunately, many teachers are also experiencing difficulties with remote learning technologies and struggle daily to create engaging lessons. 
 
--👉 Current polling services are frustrating to use are require to switch batch and forth between apps. 
--👉 Some students lack a suitable wifi connection. 
--👉 Audio issues are prevalent. 
+- 👉 Current polling services are frustrating to use are require to switch batch and forth between apps. 
+- 👉 Some students lack a suitable wifi connection. 
+- 👉 Audio issues are prevalent. 
 
 # What it does 🔨
 LearnBox enables teachers to increase student engagement & knowledge retention during online lectures without any extra work. It creates class polls from their questions and student reactions and uses NLP to add subtitles. All without requiring them to do anything beyond loging to Zoom. 
