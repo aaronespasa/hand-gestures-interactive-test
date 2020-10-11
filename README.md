@@ -1,4 +1,3 @@
-
 Improving the world, one Zoom call at a time. 
 
 # Inspiration 💡
