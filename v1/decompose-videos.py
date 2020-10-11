@@ -1,6 +1,5 @@
 from DetectGestures import DetectGestures
 
-detector = DetectGestures()
-values = detector.return_values()
-
-print(f"Values: {values}")
+path = '../resources/finalVideo.mp4'
+detector = DetectGestures(path)
+#values = detector.return_values()
