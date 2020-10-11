@@ -1,0 +1,28 @@
+{
+   "0":{
+      "one-finger":[],
+      "two-fingers":[],
+      "three-fingers":[
+         13.57,
+         46.77
+      ]
+   },
+   "1":{
+      "one-finger":[],
+      "two-fingers":[
+         13.37
+      ],
+      "three-fingers":[
+         48.47
+      ]
+   },
+   "2":{
+      "one-finger":[
+          13.97
+      ],
+      "two-fingers":[],
+      "three-fingers":[
+         48.77
+      ]
+   }
+}
